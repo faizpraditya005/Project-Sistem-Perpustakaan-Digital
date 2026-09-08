@@ -1,0 +1,1 @@
+<img src="{{ asset('images/jateng.png') }}" alt="Logo BKD Jateng" class="h-10 w-auto object-contain">
