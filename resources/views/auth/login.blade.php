@@ -80,16 +80,16 @@
                 </div>
 
                 <p class="anim-4 text-slate-300 text-sm sm:text-base leading-relaxed font-medium">
-                    Badan Kepegawaian Daerah (BKD) Provinsi Jawa Tengah merupakan unsur pelaksana pemerintah daerah yang
-                    memegang peran sentral dalam manajemen, pengembangan kompetensi, dan pembinaan karier Aparatur Sipil
-                    Negara (ASN) di lingkup Pemerintah Provinsi Jawa Tengah.
+                    Badan Kepegawaian Daerah (BKD) Provinsi Jawa Tengah adalah instansi yang berfokus pada manajemen,
+                    pengembangan kompetensi, serta pembinaan karier ASN di lingkungan Pemprov Jateng.
                 </p>
 
                 <p class="anim-5 text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    Melalui platform <span class="text-amber-400 font-bold">Perpustakaan Digital</span> ini, BKD Jateng
-                    berkomitmen mewujudkan ekosistem kerja berbasis data (*Knowledge Management*) dengan menyediakan
-                    akses cepat terhadap regulasi kepegawaian, modul teknis, tesis, serta hasil riset aparatur demi
-                    pelayanan publik yang makin <span class="italic text-white">Mboten Korupsi, Mboten Ngapusi</span>.
+                    Melalui platform <span class="text-amber-400 font-bold">Perpustakaan Digital</span> ini, BKD Prov. Jateng
+                    berkomitmen membangun budaya kerja berbasis pengetahuan (Knowledge Management). Platform ini
+                    menyediakan akses cepat ke berbagai regulasi kepegawaian, modul teknis, tesis, hingga hasil riset
+                    aparatur. Semua fasilitas ini didedikasikan untuk mewujudkan pelayanan publik yang makin prima,
+                    sejalan dengan semangat <span class="italic text-white">Mboten Korupsi, Mboten Ngapusi</span>.
                 </p>
 
                 <div class="anim-6 grid grid-cols-3 gap-4 pt-6 border-t border-white/5">
@@ -200,7 +200,7 @@
                         </div>
 
                         <div class="relative group/input">
-    
+
                             <input id="password" name="password" :type="showPassword ? 'text' : 'password'"
                                 autocomplete="current-password" required placeholder="••••••••••••"
                                 class="w-full pl-5 pr-12 py-3.5 bg-white/95 text-gray-900 placeholder-gray-400 rounded-2xl border-2 border-transparent shadow-md focus:border-amber-400 focus:ring-4 focus:ring-amber-500/20 focus:scale-[1.01] text-sm font-medium transition-all duration-300">
