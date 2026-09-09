@@ -206,7 +206,7 @@
                                 class="w-full pl-5 pr-12 py-3.5 bg-white/95 text-gray-900 placeholder-gray-400 rounded-2xl border-2 border-transparent shadow-md focus:border-amber-400 focus:ring-4 focus:ring-amber-500/20 focus:scale-[1.01] text-sm font-medium transition-all duration-300">
 
                             <button type="button" @click="showPassword = !showPassword"
-                                class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-amber-500 focus:outline-none transition-colors">
+                                class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-black focus:outline-none transition-colors">
 
                                 <svg x-show="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -229,7 +229,7 @@
 
                     <div class="flex items-center">
                         <input id="remember_me" name="remember" type="checkbox"
-                            class="h-4 w-4 text-amber-500 focus:ring-amber-500 border-white/20 rounded bg-white/10 transition-colors cursor-pointer">
+                            class="h-4 w-4 text-black focus:ring-white border-white/50 rounded bg-white/40 transition-colors cursor-pointer">
                         <label for="remember_me"
                             class="ml-2 block text-xs font-bold text-blue-100 select-none cursor-pointer">
                             Ingat akun saya di perangkat ini
