@@ -122,9 +122,15 @@
 
                     <!-- Header Kotak & Badge -->
                     <div class="flex items-center justify-between mb-4">
+                        
                         <div
-                            class="p-3 bg-gradient-to-br from-amber-400 to-amber-600 text-white rounded-2xl text-xl shadow-md">
-                            📚
+                            class="w-14 h-14 rounded-2xl bg-orange-500 flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
                         </div>
                         <span
                             class="bg-amber-500/20 border border-amber-500/30 text-amber-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -180,8 +186,13 @@
                     <!-- Header Kotak & Badge -->
                     <div class="flex items-center justify-between mb-4">
                         <div
-                            class="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl text-xl shadow-md">
-                            💾
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                </path>
+                            </svg>
                         </div>
                         <span
                             class="bg-blue-500/20 border border-blue-500/30 text-blue-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -235,9 +246,19 @@
 
                     <!-- Header Kotak & Badge -->
                     <div class="flex items-center justify-between mb-4">
+                        
                         <div
-                            class="p-3 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-2xl text-xl shadow-md">
-                            🎓
+                            class="w-14 h-14 rounded-2xl bg-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7">
+                                </path>
+                            </svg>
                         </div>
                         <span
                             class="bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -263,7 +284,8 @@
                     <div id="konten-tesis"
                         class="tab-koleksi block border-t border-white/10 pt-4 mt-2 max-h-60 overflow-y-auto custom-scrollbar">
                         @if (!isset($tesis) || $tesis->isEmpty())
-                            <p class="text-slate-500 text-xs py-4 text-center italic">Belum ada dokumen tesis/riset.</p>
+                            <p class="text-slate-500 text-xs py-4 text-center italic">Belum ada dokumen tesis/riset.
+                            </p>
                         @else
                             <div class="space-y-2">
                                 @foreach ($tesis->take(3) as $karya)
@@ -480,8 +502,8 @@
                             </svg>
                         </a>
 
-                        <a href="https://www.facebook.com/people/Badan-Kepegawaian-Daerah-Provinsi-Jawa-Tengah/100070455214016/" target="_blank" rel="noopener noreferrer"
-                            title="Facebook BKD Jateng"
+                        <a href="https://www.facebook.com/people/Badan-Kepegawaian-Daerah-Provinsi-Jawa-Tengah/100070455214016/"
+                            target="_blank" rel="noopener noreferrer" title="Facebook BKD Jateng"
                             class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-zinc-800/80 hover:border-zinc-500 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
