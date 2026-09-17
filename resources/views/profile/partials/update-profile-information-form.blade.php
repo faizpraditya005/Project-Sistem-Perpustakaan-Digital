@@ -1,12 +1,11 @@
 <section>
     <header>
-        <!-- Perbaikan: text-white-900 diubah menjadi text-white -->
-        <h2 class="text-lg font-medium text-white">
+
+        <h2 class="text-lg font-medium text-black">
             {{ __('Profile Information') }}
         </h2>
 
-        <!-- Perbaikan: text-white-900 diubah menjadi text-gray-300 -->
-        <p class="mt-1 text-sm text-gray-300">
+        <p class="mt-1 text-sm text-black">
             {{ __("Update your account's profile information and email address.") }}
         </p>
     </header>
@@ -20,25 +19,22 @@
         @method('patch')
 
         <div>
-            <!-- Perbaikan: Menambahkan class="text-white" pada Label -->
+
             <x-input-label for="name" :value="__('Name')" class="text-white" />
-            
-            <!-- Perbaikan: Menambahkan text-gray-900 dan bg-white agar tulisan input gelap -->
+
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full text-gray-900 bg-white" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
-            <!-- Perbaikan: Menambahkan class="text-white" pada Label -->
+
             <x-input-label for="email" :value="__('Email')" class="text-white" />
             
-            <!-- Perbaikan: Menambahkan text-gray-900 dan bg-white agar tulisan input gelap -->
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full text-gray-900 bg-white" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
-                    <!-- Perbaikan: text-black-900 diubah menjadi text-gray-300 -->
                     <p class="text-sm mt-2 text-gray-300">
                         {{ __('Your email address is unverified.') }}
 

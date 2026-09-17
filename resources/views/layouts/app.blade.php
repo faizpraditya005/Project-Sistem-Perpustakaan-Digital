@@ -16,16 +16,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased bg-slate-950 text-slate-100">
-    <div class="min-h-screen bg-slate-950">
+<body class="font-sans antialiased bg-slate-50 text-slate-100">
+    <div class="min-h-screen bg-slate-50">
         <nav class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800/50 sticky top-0 z-50">
             @include('layouts.navigation')
         </nav>
 
-        <!-- Page Heading -->
         @isset($header)
-            <header class="g-slate-950 border-b border-slate-900/60 shadow-lg relative z-20">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header
+                class="bg-white/90 backdrop-blur-md border-b border-slate-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.03)] relative z-40">
+                <div class="max-w-7xl mx-auto py-5 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>

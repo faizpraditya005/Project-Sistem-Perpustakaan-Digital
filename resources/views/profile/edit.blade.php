@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex items-center justify-between">
-            <h2 class="font-bold text-xl text-white-900 leading-tight">
+            <h2 class="font-bold text-xl text-black leading-tight">
                 {{ __('Profile') }}
             </h2>
 
             <a href="{{ route('dashboard') }}"
                 class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl transition-all duration-300 text-sm font-bold shadow-sm">
-                <!-- Ikon Panah Kiri -->
+                
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M10 19l-7-7m0 0l7-7m-7 7h18" />
