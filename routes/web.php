@@ -9,7 +9,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// --- UBAH BAGIAN INI AGAR MEMANGGIL CONTROLLER ---
 Route::get('/dashboard', [BookController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -19,6 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::post('/login-bidang', [App\Http\Controllers\Auth\BidangLoginController::class, 'login'])->name('login.bidang');
 
 Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/admin/users/create', [UserController::class, 'create'])->name('users.create');
