@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User; 
-use Illuminate\Support\Facades\Hash; // TAMBAHKAN INI: Untuk fitur enkripsi password
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -80,4 +81,18 @@ class UserController extends Controller
 
         return back()->with('sukses', 'Password akun ' . $user->name . ' berhasil direset!');
     }
+
+    public function destroy($id)
+{
+    $user = User::findOrFail($id);
+
+    // Mencegah admin menghapus akunnya sendiri yang sedang digunakan
+    if (Auth::id() == $id) {
+        return redirect()->back()->with('error', 'Anda tidak dapat menghapus akun yang sedang digunakan!');
+    }
+
+    $user->delete();
+
+    return redirect()->route('users.index')->with('success', 'Data bidang berhasil dihapus!');
+}
 }

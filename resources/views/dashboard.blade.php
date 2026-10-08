@@ -75,7 +75,7 @@
             <div
                 class="px-5 py-2.5 bg-blue-50/80 border border-blue-200/60 rounded-full shadow-sm hover:bg-blue-100 transition duration-300">
                 <span class="text-sm font-extrabold text-blue-800 tracking-wide flex items-center gap-2">
-                    🏛️ Perpustakaan Digital BKD Prov. Jateng
+                    🏛️ SIKURA BKD Prov. Jateng
                 </span>
             </div>
 
@@ -144,8 +144,7 @@
                     </h3>
                     <p
                         class="text-slate-600 text-sm font-semibold max-w-2xl leading-relaxed mb-8 group-hover:text-slate-800 transition-colors duration-500">
-                        Akses pusat data manajemen pengetahuan internal BKD Provinsi Jawa Tengah. Cari regulasi tata
-                        negara, panduan teknis, dan hasil riset pegawai.
+                        Akses portal SIKURA untuk pusat data manajemen pengetahuan internal BKD Provinsi Jawa Tengah.
                     </p>
 
                     <!-- Kolom Pencarian -->
@@ -585,7 +584,7 @@
         <div
             class="mt-4 px-6 py-5 bg-gradient-to-r from-blue-950 via-blue-900 to-blue-800 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-4 shadow-lg shadow-blue-900/20 border border-blue-800">
             <p class="text-blue-100 text-[11px] font-medium text-center md:text-left tracking-wide">
-                © 2026 Perpustakaan Digital BKD Jateng. Dikembangkan oleh Tim Pengembang Magang.
+                © 2026 SIKURA - Badan Kepegawaian Daerah Provinsi Jawa Tengah. Dikembangkan oleh Tim Pengembang Magang.
             </p>
 
             <div

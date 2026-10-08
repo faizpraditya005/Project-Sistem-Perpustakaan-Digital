@@ -96,7 +96,7 @@
                 <div
                     class="anim-1 inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-blue-100/50 shadow-sm text-blue-700 text-[10px] font-black uppercase tracking-widest rounded-full">
                     <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                    Perpustakaan Digital BKD Prov. Jawa Tengah
+                    SIKURA - BKD PROV. JAWA TENGAH
                 </div>
 
                 <!-- Judul Utama -->
@@ -121,7 +121,7 @@
 
                 <!-- Deskripsi 2 -->
                 <p class="anim-5 text-slate-500 text-xs sm:text-sm leading-relaxed">
-                    Melalui platform <span class="text-amber-500 font-bold">Perpustakaan Digital</span> ini, BKD Prov.
+                    Melalui platform <span class="text-amber-500 font-bold">SIKURA (Sistem Informasi Koleksi dan Ruang Baca)</span> ini, BKD Prov.
                     Jateng
                     berkomitmen membangun budaya kerja berbasis pengetahuan (Knowledge Management). Platform ini
                     menyediakan akses cepat ke berbagai regulasi kepegawaian, modul teknis, tesis, hingga hasil riset
@@ -220,7 +220,7 @@
                         Pilih Akses Bidang
                     </h2>
                     <p class="mt-2 text-xs text-slate-500 font-semibold tracking-wide">
-                        Silakan pilih bidang Anda untuk masuk ke dalam portal.
+                        Silakan pilih bidang Anda untuk masuk ke dalam portal SIKURA.
                     </p>
                 </div>
 
@@ -290,8 +290,7 @@
                                     <span
                                         class="block text-xs font-black text-slate-800 group-hover:text-{{ $bidang['color'] }}-600 transition-colors leading-tight pr-2">{{ $bidang['nama'] }}</span>
                                     <span
-                                        class="block text-[9px] font-bold text-slate-400 mt-0.5 uppercase tracking-wider">Masuk
-                                        sebagai User</span>
+                                        class="block text-[9px] font-bold text-slate-400 mt-0.5 uppercase tracking-wider"></span>
                                 </div>
                                 <div
                                     class="ml-auto text-slate-300 group-hover:text-{{ $bidang['color'] }}-500 group-hover:translate-x-1 transition-all duration-300">
