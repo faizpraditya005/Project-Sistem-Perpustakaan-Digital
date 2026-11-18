@@ -30,7 +30,6 @@
             @endif
 
             <!-- 1. BANNER HEADER & PENCARIAN -->
-            <!-- 1. HEADER & PENCARIAN KATALOG BUKU FISIK -->
             <div class="mb-10 anim-fade-up" style="animation-delay: 0.1s;">
                 <div
                     class="bg-gradient-to-r from-blue-950 via-blue-900 to-blue-800 rounded-[2rem] p-8 sm:p-10 shadow-2xl shadow-blue-900/20 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-6">
@@ -42,7 +41,8 @@
 
                     <!-- Judul & Subtitle -->
                     <div class="relative z-10 lg:w-6/12 text-center lg:text-left">
-                        <h1 class="text-2xl sm:text-3xl font-black text-white mb-2 tracking-tight">Katalog Buku Fisik BKD
+                        <h1 class="text-2xl sm:text-3xl font-black text-white mb-2 tracking-tight">Katalog Buku Fisik
+                            BKD
                         </h1>
                         <p class="text-blue-200 text-xs sm:text-sm font-medium leading-relaxed">
                             Klik pada kotak buku fisik di bawah untuk mengajukan peminjaman. Sertakan identitas dan
@@ -66,8 +66,6 @@
                                 class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white/95 border-none focus:ring-4 focus:ring-amber-400/30 text-slate-900 font-semibold placeholder-slate-400 shadow-inner text-sm transition-all">
                         </div>
 
-                        <!-- Deretan Tombol Pintas di Bawah Pencarian -->
-                        <!-- Deretan Tombol Pintas di Bawah Pencarian -->
                         <div class="flex flex-wrap items-center justify-start lg:justify-end gap-2 pt-1">
                             <!-- Tombol Status Peminjaman (Semua User) -->
                             <a href="{{ route('peminjaman.status') }}"
@@ -99,17 +97,16 @@
                 </div>
             </div>
 
-            <!-- 2. DAFTAR KOLEKSI BUKU FISIK (Dapat Diklik Langsung) -->
+            <!-- 2. DAFTAR KOLEKSI BUKU FISIK -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 anim-fade-up"
                 style="animation-delay: 0.2s;">
 
+                <!-- 2. DAFTAR KOLEKSI BUKU FISIK -->
                 @foreach ($bukuList as $buku)
-                    <!-- KOTAK BUKU: Seluruh area kotak bisa diklik -->
-                    <div @click="bukaModal({{ json_encode($buku) }})"
-                        x-show="matchesSearch('{{ strtolower($buku->judul) }}', '{{ strtolower($buku->penulis) }}', '{{ strtolower($buku->kategori) }}')"
-                        class="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-2xl hover:border-blue-300 border border-slate-100 transition-all duration-300 flex flex-col h-full cursor-pointer transform hover:-translate-y-1 relative overflow-hidden">
+                    <div x-show="matchesSearch('{{ strtolower($buku->judul) }}', '{{ strtolower($buku->penulis) }}', '{{ strtolower($buku->kategori) }}')"
+                        class="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden">
 
-                        <!-- Sampul Buku Minimalis -->
+                        <!-- 1. GAMBAR COVER BUKU (BERSIH TANPA TOMBOL HAPUS) -->
                         <div
                             class="w-full h-48 rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 flex flex-col items-center justify-center mb-4 text-white p-4 text-center shadow-inner group-hover:scale-[1.02] transition-transform duration-300">
                             <svg class="w-10 h-10 text-amber-400 mb-2" fill="none" stroke="currentColor"
@@ -118,42 +115,49 @@
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
                                 </path>
                             </svg>
-                            <span class="text-[10px] font-black tracking-widest text-blue-200 uppercase">Perpustakaan
-                                BKD</span>
+                            <span class="text-[10px] font-black tracking-widest text-blue-200 uppercase">
+                                Perpustakaan BKD
+                            </span>
                         </div>
 
-                        <!-- Info Buku -->
-                        <div class="flex-grow flex flex-col">
-                            <span
-                                class="text-[10px] font-bold text-amber-500 uppercase tracking-wider mb-1">{{ $buku->kategori }}</span>
-                            <h3
-                                class="text-base font-black text-slate-800 leading-snug mb-1 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                                {{ $buku->judul }}</h3>
-                            <p class="text-xs font-semibold text-slate-500 mb-4">{{ $buku->penulis }} •
-                                {{ $buku->tahun }}</p>
-
-                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                                @if ($buku->stok > 0)
-                                    <span class="text-xs font-bold text-emerald-600">
-                                        Stok: {{ $buku->stok }} Eks
-                                    </span>
-
-                                    <button type="button"
-                                        @click="openModal = true; selectedBuku = {{ json_encode($buku) }}"
-                                        class="text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">
-                                        Pinjam ➔
-                                    </button>
-                                @else
-                                    <span class="text-xs font-bold text-rose-600">
-                                        Stok: 0 Eks
-                                    </span>
-
-                                    <button type="button" disabled
-                                        class="px-3 py-1 bg-slate-100 text-slate-400 text-xs font-black rounded-lg border border-slate-200 cursor-not-allowed select-none opacity-70">
-                                        Stok Habis
-                                    </button>
-                                @endif
+                        <!-- 2. DETAIL INFORMASI BUKU + TOMBOL HAPUS DI SEBELAH KANAN -->
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <div>
+                                    <p class="text-[10px] font-black text-amber-500 uppercase tracking-wider mb-1">
+                                        {{ $buku->kategori ?? 'M' }}
+                                    </p>
+                                    <h3 class="font-bold text-slate-800 text-sm leading-snug line-clamp-2 mb-1">
+                                        {{ $buku->judul }}
+                                    </h3>
+                                    <p class="text-xs text-slate-400 font-medium">
+                                        {{ $buku->penulis }} • {{ $buku->tahun }}
+                                    </p>
+                                </div>
                             </div>
+                        </div>
+
+                        <!-- 3. FOOTER (STOK & TOMBOL PINJAM) -->
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-4">
+                            @if ($buku->stok > 0)
+                                <span class="text-xs font-bold text-emerald-600">
+                                    Stok: {{ $buku->stok }} Eks
+                                </span>
+
+                                <button type="button" @click="bukaModal({{ json_encode($buku) }})"
+                                    class="text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1 cursor-pointer">
+                                    Pinjam ➔
+                                </button>
+                            @else
+                                <span class="text-xs font-bold text-rose-600">
+                                    Stok: 0 Eks
+                                </span>
+
+                                <button type="button" disabled
+                                    class="px-3 py-1 bg-slate-100 text-slate-400 text-xs font-black rounded-lg border border-slate-200 cursor-not-allowed select-none opacity-70">
+                                    Stok Habis
+                                </button>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -161,7 +165,6 @@
             </div>
         </div>
 
-        <!-- 3. MODAL POP-UP FORMULIR IDENTITAS PEMINJAM -->
         <div x-show="modalTerbuka" style="display: none;"
             class="fixed inset-0 z-[100] flex items-center justify-center p-4">
             <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" @click="tutupModal()"></div>
@@ -195,16 +198,16 @@
                             <label
                                 class="block text-[11px] font-black text-slate-700 uppercase tracking-wider mb-1">Nama
                                 Lengkap</label>
-                            <input type="text" name="nama_peminjam" value="{{ Auth::user()->name ?? '' }}" required
-                                placeholder="Masukkan nama lengkap..."
+                            <input type="text" name="nama_peminjam" value="{{ Auth::user()->name ?? '' }}"
+                                required placeholder="Masukkan nama lengkap..."
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-bold text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none">
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
                                 <label
-                                    class="block text-[11px] font-black text-slate-700 uppercase tracking-wider mb-1">Bidang
-                                    / Subbag</label>
+                                    class="block text-[11px] font-black text-slate-700 uppercase tracking-wider mb-1">Instansi
+                                    Daerah</label>
                                 <input type="text" name="bidang_peminjam"
                                     value="{{ Auth::user()->bidang ?? '' }}" required
                                     placeholder="Contoh: Sekretariat"

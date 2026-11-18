@@ -83,7 +83,7 @@
                 @if (auth()->user()->email === 'admin.perpus@bkd.jatengprov.go.id')
                     <a href="{{ route('users.index') }}"
                         class="inline-flex items-center gap-1.5 px-5 py-2 bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-500 hover:to-purple-600 text-white text-sm font-black rounded-xl border border-violet-400/30 shadow-lg shadow-purple-500/25 hover:shadow-[0_0_20px_rgba(147,51,235,0.4)] hover:scale-105 transition-all duration-300">
-                        ⚙️ Kelola Akun Bidang
+                        Kelola Akun
                     </a>
                 @endif
                 <a href="{{ route('books.create') }}"

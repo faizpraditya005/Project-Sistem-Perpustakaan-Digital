@@ -5,15 +5,14 @@
             <!-- HEADER HALAMAN -->
             <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                    <h1 class="text-2xl font-black text-slate-800">Master Data Bidang / Subbag</h1>
-                    <p class="text-sm font-medium text-slate-500">Kelola daftar unit kerja BKD Provinsi Jawa Tengah untuk pilihan login dan peminjaman.</p>
+                    <h1 class="text-2xl font-black text-slate-800">Kelola Akun</h1>
                 </div>
                 <div class="flex items-center gap-2">
                     <a href="{{ route('dashboard') }}" class="px-4 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-black rounded-xl transition-all">
                         ← Kembali
                     </a>
                     <a href="{{ route('users.create') }}" class="px-4 py-2.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-black rounded-xl shadow-md transition-all">
-                        + Tambah Bidang Baru
+                        + Tambah Akun Baru
                     </a>
                 </div>
             </div>
@@ -37,7 +36,7 @@
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="bg-slate-50 border-b border-slate-100 text-[11px] font-black text-slate-400 uppercase tracking-wider">
-                                <th class="p-4 pl-6">NAMA BIDANG / SUBBAG</th>
+                                <th class="p-4 pl-6">NAMA AKUN</th>
                                 <th class="p-4">EMAIL NOTIFIKASI</th>
                                 <th class="p-4 pr-6 text-center">AKSI</th>
                             </tr>

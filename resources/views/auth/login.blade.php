@@ -92,22 +92,14 @@
 
             <div class="max-w-2xl space-y-6 relative z-10">
 
-                <!-- Badge -->
-                <div
-                    class="anim-1 inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-blue-100/50 shadow-sm text-blue-700 text-[10px] font-black uppercase tracking-widest rounded-full">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                    SIKURA - BKD PROV. JAWA TENGAH
-                </div>
-
                 <!-- Judul Utama -->
                 <h1
                     class="anim-2 text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-slate-900 transition-all duration-700">
-                    Badan Kepegawaian <br class="hidden sm:inline"> Daerah <br class="hidden sm:inline">
+                    SIKURA <br>
                     <span
-                        class="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent drop-shadow-sm">Provinsi
+                        class="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent drop-shadow-sm"> BKD Provinsi
                         Jawa Tengah</span>
                 </h1>
-
                 <div
                     class="anim-3 w-24 h-2 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.4)]">
                 </div>
@@ -121,7 +113,8 @@
 
                 <!-- Deskripsi 2 -->
                 <p class="anim-5 text-slate-500 text-xs sm:text-sm leading-relaxed">
-                    Melalui platform <span class="text-amber-500 font-bold">SIKURA (Sistem Informasi Koleksi dan Ruang Baca)</span> ini, BKD Prov.
+                    Melalui platform <span class="text-amber-500 font-bold">SIKURA (Sistem Informasi Koleksi dan Ruang
+                        Baca)</span> ini, BKD Prov.
                     Jateng
                     berkomitmen membangun budaya kerja berbasis pengetahuan (Knowledge Management). Platform ini
                     menyediakan akses cepat ke berbagai regulasi kepegawaian, modul teknis, tesis, hingga hasil riset
@@ -217,11 +210,8 @@
 
                 <div class="text-center mb-8 relative z-10">
                     <h2 class="text-2xl font-black tracking-tight text-slate-900">
-                        Pilih Akses Bidang
+                        Silahkan klik tombol untuk masuk ke dalam portal SIKURA
                     </h2>
-                    <p class="mt-2 text-xs text-slate-500 font-semibold tracking-wide">
-                        Silakan pilih bidang Anda untuk masuk ke dalam portal SIKURA.
-                    </p>
                 </div>
 
                 @if (session('error'))
@@ -234,39 +224,11 @@
                     @php
                         $bidangList = [
                             [
-                                'id' => 'sekretariat',
-                                'nama' => 'Sekretariat',
+                                'id' => 'Masuk',
+                                'nama' => 'Masuk',
                                 'color' => 'blue',
                                 'icon' =>
-                                    '<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />',
-                            ],
-                            [
-                                'id' => 'bangkom',
-                                'nama' => 'Bidang Pengembangan Kompetensi',
-                                'color' => 'amber',
-                                'icon' =>
-                                    '<path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />',
-                            ],
-                            [
-                                'id' => 'mutasi',
-                                'nama' => 'Bidang Mutasi dan Promosi',
-                                'color' => 'blue',
-                                'icon' =>
-                                    '<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />',
-                            ],
-                            [
-                                'id' => 'pembinaan',
-                                'nama' => 'Bidang Pembinaan dan Penilaian Kinerja',
-                                'color' => 'emerald',
-                                'icon' =>
-                                    '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />',
-                            ],
-                            [
-                                'id' => 'pengadaan',
-                                'nama' => 'Bidang Pengadaan, Pemberhentian & Info Pegawai',
-                                'color' => 'blue',
-                                'icon' =>
-                                    '<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />',
+                                    '<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l3 3m0 0l-3 3m3-3H8.25" />',
                             ],
                         ];
                     @endphp
@@ -278,9 +240,10 @@
                             <button type="submit"
                                 class="w-full text-left group p-4 bg-slate-50/50 hover:bg-white border border-slate-200 hover:border-{{ $bidang['color'] }}-300 rounded-2xl shadow-[inset_0_2px_4px_rgba(0,0,0,0.01)] hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-4">
 
+                                <!-- Container Ikon Masuk -->
                                 <div
-                                    class="w-10 h-10 rounded-xl bg-{{ $bidang['color'] }}-100/50 border border-{{ $bidang['color'] }}-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0 text-{{ $bidang['color'] }}-600">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    class="w-12 h-12 rounded-xl bg-{{ $bidang['color'] }}-100/60 border border-{{ $bidang['color'] }}-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0 text-{{ $bidang['color'] }}-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"
                                         viewBox="0 0 24 24">
                                         {!! $bidang['icon'] !!}
                                     </svg>
@@ -288,10 +251,12 @@
 
                                 <div>
                                     <span
-                                        class="block text-xs font-black text-slate-800 group-hover:text-{{ $bidang['color'] }}-600 transition-colors leading-tight pr-2">{{ $bidang['nama'] }}</span>
-                                    <span
-                                        class="block text-[9px] font-bold text-slate-400 mt-0.5 uppercase tracking-wider"></span>
+                                        class="block text-xl font-black text-slate-800 group-hover:text-{{ $bidang['color'] }}-600 transition-colors leading-tight pr-2">
+                                        {{ $bidang['nama'] }}
+                                    </span>
                                 </div>
+
+                                <!-- Ikon Panah Kanan -->
                                 <div
                                     class="ml-auto text-slate-300 group-hover:text-{{ $bidang['color'] }}-500 group-hover:translate-x-1 transition-all duration-300">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -320,10 +285,6 @@
                 class="hidden max-w-md w-full bg-white/80 backdrop-blur-2xl border border-white p-8 sm:p-10 rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative">
 
                 <div class="text-center mb-8 relative z-10">
-                    <div
-                        class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 border border-blue-200 shadow-sm">
-                        🧑‍💻
-                    </div>
                     <h2 class="text-2xl font-black tracking-tight text-slate-900">
                         Admin Utama
                     </h2>
@@ -365,7 +326,7 @@
                 <div class="mt-6 pt-5 border-t border-slate-200 text-center relative z-10">
                     <button type="button" onclick="switchView('view-bidang')"
                         class="inline-flex items-center gap-1.5 text-xs font-black text-slate-500 hover:text-amber-600 transition-colors cursor-pointer">
-                        ⬅️ Kembali ke Pilihan Bidang
+                        ⬅️ Kembali ke Awal
                     </button>
                 </div>
 

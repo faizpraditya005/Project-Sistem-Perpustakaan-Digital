@@ -6,6 +6,8 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+
+
 class BookController extends Controller
 {
     // 1. Menampilkan data statistik & pencarian untuk Halaman Dashboard
@@ -89,17 +91,43 @@ class BookController extends Controller
         return redirect()->route('dashboard')->with('success', 'Koleksi referensi baru berhasil ditambahkan!');
     }
 
-    // 5. Fungsi admin untuk men-take down koleksi
     public function destroy($id)
     {
+        // Cari data buku berdasarkan ID
         $book = Book::findOrFail($id);
 
-        if ($book->file_path && Storage::disk('public')->exists($book->file_path)) {
-            Storage::disk('public')->delete($book->file_path);
+        // Jika buku tersebut adalah E-Book atau Tesis dan memiliki file PDF
+        if (in_array($book->jenis_koleksi, ['E-Book', 'Tesis']) && !empty($book->file_path)) {
+            
+            // Cek apakah file fisik PDF benar-benar ada di server, lalu hapus
+            if (Storage::disk('public')->exists($book->file_path)) {
+                Storage::disk('public')->delete($book->file_path);
+            }
         }
 
+        // Hapus data buku dari database
         $book->delete();
 
-        return redirect()->route('dashboard')->with('success', 'Koleksi berhasil di-take down dari sistem!');
+        // Kembalikan ke halaman sebelumnya dengan pesan sukses
+        return back()->with('success', 'Koleksi ' . $book->jenis_koleksi . ' dan file PDF berhasil dihapus permanen!');
     }
+
+    public function viewPdf($id)
+{
+    $book = Book::findOrFail($id);
+
+    $path = storage_path('app/public/' . $book->file_path);
+
+    if (!file_exists($path)) {
+        $path = storage_path('app/' . $book->file_path);
+    }
+    if (!file_exists($path)) {
+        abort(404, 'File PDF tidak ditemukan di folder penyimpanan server.');
+    }
+
+    return response()->file($path, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="' . $book->judul . '.pdf"'
+    ]);
+}
 }

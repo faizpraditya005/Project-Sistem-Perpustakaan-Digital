@@ -125,4 +125,16 @@ class PeminjamanBukuController extends Controller
 
         return redirect()->back()->with('success', 'Buku telah dikembalikan dan stok diperbarui!');
     }
+
+    public function destroy($id)
+{
+    // 1. Cari buku berdasarkan ID
+    $buku = \App\Models\Book::find($id);
+
+    // 2. Jika tidak ditemukan, tampilkan ID yang dikirim dan daftar ID yang ada di DB
+    if (!$buku) {
+        $idTersedia = \App\Models\Book::pluck('id')->implode(', ');
+        return back()->with('error', "Gagal hapus: Buku dengan ID ($id) tidak ditemukan. ID yang ada di database: [$idTersedia]");
+    }
+}
 }

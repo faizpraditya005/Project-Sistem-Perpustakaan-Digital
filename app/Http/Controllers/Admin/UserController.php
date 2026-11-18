@@ -13,7 +13,6 @@ class UserController extends Controller
     // Fungsi untuk menampilkan daftar semua akun bidang
     public function index()
     {
-        // Mengambil semua user kecuali admin utama agar tidak terhapus/teredit tidak sengaja
         $users = User::where('email', '!=', 'admin.perpus@bkd.jatengprov.go.id')->get();
         return view('admin.users.index', compact('users'));
     }

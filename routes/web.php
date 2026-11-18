@@ -17,7 +17,7 @@ Route::post('/login-bidang', [BidangLoginController::class, 'login'])->name('log
 
 // 2. DASHBOARD (Wajib Login & Verified)
 Route::get('/dashboard', [BookController::class, 'dashboard'])
-    ->middleware(['auth', 'verified'])
+->middleware(['auth', 'verified'])
     ->name('dashboard');
 
 // 3. ROUTE APLIKASI (Wajib Login)
@@ -33,6 +33,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/katalog-buku/tambah', [KatalogController::class, 'create'])->name('katalog.create');
     Route::post('/katalog-buku', [KatalogController::class, 'store'])->name('katalog.store');
 
+    Route::get('/buku/pdf/{id}', [BookController::class, 'viewPdf'])->name('books.view-pdf');
+    Route::delete('/buku/{id}', [App\Http\Controllers\BookController::class, 'destroy'])->name('books.destroy');
     // Transaksi Peminjaman & Status (Menggunakan PeminjamanBukuController)
     Route::post('/peminjaman-buku/ajukan', [PeminjamanBukuController::class, 'store'])->name('peminjaman.store');
     Route::get('/peminjaman/status', [PeminjamanBukuController::class, 'status'])->name('peminjaman.status');
@@ -52,10 +54,13 @@ Route::middleware(['auth'])->group(function () {
 Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
     // Manajemen Buku
-    Route::get('/books', [BookController::class, 'index'])->name('books.index');
-    Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
-    Route::post('/books', [BookController::class, 'store'])->name('books.store');
-    Route::delete('/admin/books/{id}', [BookController::class, 'destroy'])->name('books.destroy');
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+Route::post('/books', [BookController::class, 'store'])->name('books.store');
+Route::delete('/admin/books/{id}', [BookController::class, 'destroy'])->name('admin.books.destroy');
+
+// Rute Hapus Katalog Buku Fisik (Mengarahkan ke PeminjamanBukuController)
+Route::delete('/buku/{id}', [PeminjamanBukuController::class, 'destroy'])->name('books.destroy');
 });
 
 require __DIR__.'/auth.php';

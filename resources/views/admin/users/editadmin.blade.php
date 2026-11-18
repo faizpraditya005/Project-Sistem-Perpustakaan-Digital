@@ -67,8 +67,8 @@
             <div
                 class="anim-admin-3 bg-slate-900/70 backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.2)] rounded-3xl p-8 transition-all duration-300 hover:border-white/20">
                 <div class="border-b border-white/10 pb-4 mb-6">
-                    <h3 class="text-xl font-bold text-white">Informasi Profil Bidang</h3>
-                    <p class="text-sm text-slate-400 mt-1">Perbarui nama atau alamat email akun bidang yang
+                    <h3 class="text-xl font-bold text-white">Informasi Profil</h3>
+                    <p class="text-sm text-slate-400 mt-1">Perbarui nama atau alamat email akun yang
                         bersangkutan.</p>
                 </div>
 
